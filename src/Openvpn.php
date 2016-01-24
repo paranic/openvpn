@@ -8,7 +8,7 @@ class Openvpn {
 	public $server_port = '1194';
 	public $protocol = 'udp';
 	public $easy_rsa_folder = '/tmp/easy-rsa';
-	public $network = '172.22.22.0';
+	public $network = '10.0.0.0';
 	public $netmask = '255.255.255.0';
 
 	public function setup()
