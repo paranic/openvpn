@@ -1,0 +1,26 @@
+{
+	  "name": "paranic/openvpn"
+	, "type": "library"
+	, "description": "PHP OpenVPN config generator"
+	, "keywords": ["openvpn", "easy-rsa", "secure", "php"]
+	, "license": "MIT"
+	, "authors":
+	[
+		{
+			  "name": "Parastatidis Nikos"
+			, "email": "paranic@gmail.com"
+			, "role": "Developer"
+		}
+	]
+	, "support":
+	{
+		"issues": "https://github.com/paranic/openvpn/issues"
+	}
+	, "autoload":
+	{
+		"psr-4":
+		{
+			"Paranic\\":"src/"
+		}
+	}
+}
