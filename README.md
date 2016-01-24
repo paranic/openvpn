@@ -39,7 +39,7 @@ $openvpn->create_server();
 ```
 Again your server configuration is stored at easy_rsa_folder under the keys_packed subfolder.
 
-### Generate Client Congiruation
+### Generate Client Configuration
 ```
 $openvpn->create_client('sample_client_1');
 ```
