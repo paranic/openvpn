@@ -6,9 +6,12 @@ Based on security considerations taken from:
 - https://community.openvpn.net/openvpn/wiki/Hardening
 - https://blog.g3rt.nl/openvpn-security-tips.html
 
+New in 2020
+- https://blog.securityevaluators.com/hardening-openvpn-in-2020-1672c3c4135a
+- https://blog.securityevaluators.com/how-to-harden-openvpn-in-2020-part-2-da51acab3ea8
 
 ## Notes
-works on debian 8.2 jessie with openvpn package installed.
+works on debian 10 jessie with openvpn package installed.
 ```
 apt-get install openvpn
 ```
@@ -25,7 +28,7 @@ $openvpn->easy_rsa_folder = '/tmp/easy-rsa';
 $openvpn->network = '10.0.0.0';
 $openvpn->netmask = '255.255.255.0';
 ```
-All keys generated will be stored in the easy_rsa_folder under keys_packed.
+All keys generated will be stored in the easy_rsa/configs folder.
 
 ### Setup easy-rsa
 ```
