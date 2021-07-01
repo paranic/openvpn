@@ -104,8 +104,8 @@ class Openvpn {
 		// Check if client_name exists in our keys database
 		if (in_array($client_name . '.conf', $this->existing_keys())) die('Client name already exists in database.' . PHP_EOL);
 
-		shell_exec('cd ' . $this->easy_rsa_folder . ' && ./easyrsa gen-req ' . $client_name . ' nopass');
-		shell_exec('cd ' . $this->easy_rsa_folder . ' && ./easyrsa sign-req client ' . $client_name);
+		shell_exec('cd ' . $this->easy_rsa_folder . ' && export EASYRSA_REQ_CN="' . $client_name . '" ; ./easyrsa gen-req ' . $client_name . ' nopass');
+		shell_exec('cd ' . $this->easy_rsa_folder . ' && export EASYRSA_REQ_CN="' . $client_name . '" ; ./easyrsa sign-req client ' . $client_name);
 
 		$ca = trim(file_get_contents($this->easy_rsa_folder . '/pki/ca.crt'));
 
@@ -164,7 +164,7 @@ EOT;
 	{
 		return <<<EOT
 proto $this->protocol
-port 1194
+port $this->server_port
 dev tun
 verb 5
 <ca>
@@ -180,6 +180,7 @@ $key
 $tls_crypt
 </tls-crypt>
 server $this->network $this->netmask
+#mode server
 #ifconfig 10.0.0.254 255.255.255.0
 topology subnet
 client-config-dir ccd
